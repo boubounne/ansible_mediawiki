@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="99dp"
+        android:hint="Voici les infos de PICO 1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:hint="" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="117dp"
+        android:hint="Température"
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:hint="Info Batterie"
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="353dp"
+        android:hint=""
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/Version"
+        android:layout_width="62dp"
+        android:layout_height="14dp"
+        android:text="Version 1.0"
+        android:textSize="10dp" />
+
+
+</LinearLayout>
