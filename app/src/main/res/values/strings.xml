@@ -6,4 +6,7 @@
     <string name="User">nom d utilisateur</string>
     <string name="password">Mot de Passe</string>
     <string name="button_val">Validation</string>
+    <string name="Version">Version 1.0</string>
+    <string name="Temp">Température</string>
+    <string name="Bat">Info Batterie</string>
 </resources>

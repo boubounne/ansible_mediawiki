@@ -19,27 +19,27 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="117dp"
-        android:hint="Température"
-        android:textSize="18dp" />
+        android:hint="@string/Temp"
+        android:textSize="18sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="81dp"
-        android:hint="Info Batterie"
-        android:textSize="18dp" />
+        android:hint="@string/Bat"
+        android:textSize="18sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="353dp"
         android:hint=""
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/Version"
         android:layout_width="62dp"
         android:layout_height="14dp"
-        android:text="Version 1.0"
-        android:textSize="10dp" />
+        android:text="@string/Version"
+        android:textSize="12sp" />
 
 
 </LinearLayout>
