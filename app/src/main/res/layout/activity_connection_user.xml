@@ -1,65 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".connection_user">
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textblanc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="45sp" />
+
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="298dp"
-        android:layout_height="167dp"
-        android:text="Connection Utilisateur"
-        android:textSize="45sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297" />
+        android:layout_width="match_parent"
+        android:layout_height="152dp"
+        android:text="Connection User"
+        android:layout_gravity="center_vertical"
+        android:textSize="45sp" />
 
-
-    <EditText
-        android:layout_width="166dp"
-        android:layout_height="47dp"
-        android:hint="@string/User"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="485dp" />
-
-    <EditText
-        android:layout_width="166dp"
-        android:layout_height="42dp"
-        android:hint="@string/password"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="536dp" />
     <TextView
-        android:id="@+id/Version"
-        android:layout_width="62dp"
-        android:layout_height="14dp"
-        android:text="@string/Version"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
-
-    <Button
-        android:id="@+id/button_osol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_val"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        android:id="@+id/textblanc2"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:text=""
+        android:textSize="45sp" />
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        tools:context="fr.esilv.layoutsexample.RelativeLayoutActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/user_user"
+            android:layout_width="258dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:hint="@string/User"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="109dp"
+            tools:layout_editor_absoluteY="476dp" />
+
+
+        <EditText
+            android:id="@+id/password_user"
+            android:layout_width="170dp"
+            android:layout_height="56dp"
+            android:layout_below="@id/user_user"
+            android:layout_alignLeft="@id/user_user"
+            android:layout_alignRight="@id/user_user"
+            android:layout_centerInParent="true"
+            android:hint="@string/password"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="109dp"
+            tools:layout_editor_absoluteY="536dp" />
+
+        <Button
+            android:id="@+id/button_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password_user"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="18dp"
+            android:text="@string/button_val" />
+
+        <TextView
+            android:id="@+id/Version"
+            android:layout_width="62dp"
+            android:layout_height="14dp"
+            android:layout_below="@id/button_user"
+            android:layout_alignParentEnd="true"
+            android:text="@string/Version"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

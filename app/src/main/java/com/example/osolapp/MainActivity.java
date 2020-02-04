@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int NEXT_REQUEST_CODE=0;
     public static final String IS_SHOWN = "IS_SHOWN";
     private boolean isShown = true;
-    private Button button1;
+    Button button1;
 
 
     @Override
