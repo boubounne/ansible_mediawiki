@@ -41,6 +41,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
             android:hint="@string/User"
+            android:background="@drawable/border"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="109dp"
             tools:layout_editor_absoluteY="476dp" />
@@ -55,6 +56,8 @@
             android:layout_alignRight="@id/user_sol"
             android:layout_centerInParent="true"
             android:hint="@string/password"
+            android:inputType="textPassword"
+            android:background="@drawable/border"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="109dp"
             tools:layout_editor_absoluteY="536dp" />

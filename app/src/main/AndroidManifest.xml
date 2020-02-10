@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".info_pico_osol"></activity>
+        <activity
+            android:name=".creation_compte"
+            android:label="@string/title_activity_creation_compte"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".info_pico_osol" />
         <activity android:name=".info_pico_user" />
         <activity android:name=".connection_user" />
         <activity android:name=".connection_osol" />
