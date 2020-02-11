@@ -11,20 +11,20 @@
         android:id="@+id/tv_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:textAlignment="center"
-        android:textSize="50sp"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="5dp"
         android:fontFamily="indigo_daisy"
-        android:layout_marginTop="60dp"/>
+        android:text="Register"
+        android:textAlignment="center"
+        android:textSize="50sp" />
 
     <TextView
         android:id="@+id/tv_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="roboto_regular"
         android:text="@string/tag"
         android:textSize="17sp" />
@@ -33,11 +33,25 @@
         android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="your_name"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
-        android:padding="15dp"
+        android:background="@drawable/border"
+        android:fontFamily="roboto_regular"
+        android:hint="your_name"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/user"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="User"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
         android:inputType="textPersonName"
         android:fontFamily="roboto_regular"
         android:background="@drawable/border"
@@ -51,7 +65,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
-        android:padding="15dp"
+        android:padding="10dp"
         android:fontFamily="roboto_regular"
         android:inputType="textEmailAddress"
         android:background="@drawable/border"
@@ -65,7 +79,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
-        android:padding="15dp"
+        android:padding="10dp"
         android:fontFamily="roboto_regular"
         android:inputType="textPassword"
         android:background="@drawable/border"
@@ -78,11 +92,32 @@
         android:hint="re_type_password"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:padding="15dp"
+        android:padding="10dp"
         android:fontFamily="roboto_regular"
         android:inputType="textPassword"
         android:background="@drawable/border"
         android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/border"
+        android:fontFamily="roboto_regular"
+        android:padding="10dp"
+        android:text="@string/Question" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="239dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="20dp"
+        android:entries="@array/Choice"
+        android:padding="15dp"
+        android:prompt="@string/Question" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -93,21 +128,13 @@
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/border"
-            android:fontFamily="roboto_regular"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="30dp"
-            android:layout_centerInParent="true"
-            android:textColor="@android:color/white"
-            android:text="register"/>
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/osol"
-            android:layout_above="@id/btn_register"
-            android:layout_centerHorizontal="true"/>
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/border"
+            android:fontFamily="roboto_regular"
+            android:text="register"
+            android:textColor="@android:color/white" />
 
 
     </RelativeLayout>
