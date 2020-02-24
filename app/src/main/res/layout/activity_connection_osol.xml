@@ -37,7 +37,7 @@
         <EditText
             android:id="@+id/user_sol"
             android:layout_width="258dp"
-            android:layout_height="wrap_content"
+            android:layout_height="34dp"
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
             android:hint="@string/User"
@@ -49,15 +49,18 @@
 
         <EditText
             android:id="@+id/password_sol"
-            android:layout_width="170dp"
-            android:layout_height="56dp"
+            android:layout_width="258dp"
+            android:layout_height="34dp"
             android:layout_below="@id/user_sol"
             android:layout_alignLeft="@id/user_sol"
             android:layout_alignRight="@id/user_sol"
             android:layout_centerInParent="true"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="3dp"
+            android:background="@drawable/border"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:background="@drawable/border"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="109dp"
             tools:layout_editor_absoluteY="536dp" />
