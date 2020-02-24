@@ -14,7 +14,9 @@ public class mySQLiteOpenHelper extends SQLiteOpenHelper {
         +"ID INTEGER PRIMARY KEY,"
         +"Name TEXT NOT NULL,"
         +"User TEXT NOT NULL,"
-        +"Password TEXT NOT NULL);";
+        +"Password TEXT NOT NULL,"
+            +"Email TEXT NOT NULL,"
+            +"Osolien BOOL NOT NULL);";
 
     public mySQLiteOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);

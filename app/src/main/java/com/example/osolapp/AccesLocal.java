@@ -4,8 +4,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.osolapp.mySQLiteOpenHelper;
-
 public class AccesLocal {
 
     private String nomBase ="BDOsol";
@@ -17,25 +15,28 @@ public class AccesLocal {
         accesBD = new mySQLiteOpenHelper(contexte,nomBase, null, versionBAse);
     }
 
-    public void ajout(Data data){
+    public void ajout(profil data){
         bd = accesBD.getWritableDatabase();
-        String req="insert into Data (Name,User,Password,Osoloen) values ";
-        req +="(\""+data.getName()+"\",\""+data.getUser()+"\",\""+data.getPassword()+"\","+data.Osolien()+")";
+        String req="insert into Data (ID,Name,User,Password,Email,Osoloen) values ";
+        req +="(\""+data.getID()+"\",\""+data.getName()+"\",\""+data.getUser()+"\","+data.getPassword()+"\",\""+data.getEmail()+"\",\""+data.Osolien()+"\"";
         bd.execSQL(req);
     }
 
-    public Data recup(){
+    public profil recup(){
 
         bd = accesBD.getReadableDatabase();
-        Data data=null;
-        String req= "select * from data";
+        profil data=null;
+        String req= "select * from profil";
         Cursor curseur= bd.rawQuery(req,null);
         curseur.moveToLast();
         if(!curseur.isAfterLast()){
+            int ID=curseur.getInt(0);
             String Name=curseur.getString(1);
             String User=curseur.getString(2);
             String Password=curseur.getString(3);
-            data=new Data(Name,User,Password,true);
+            String Email=curseur.getString(4);
+            boolean Osolien=curseur.getWantsAllOnMoveCalls();
+            data=new profil(ID,Name,User,Password,Email,Osolien);
             }
         curseur.close();
         return data;

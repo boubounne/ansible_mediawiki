@@ -2,12 +2,9 @@ package com.example.osolapp;
 
 import android.content.Context;
 
-import com.example.osolapp.AccesLocal;
-import com.example.osolapp.Data;
-
 public class Controle {
     private static Controle instance=null;
-    private static Data data;
+    private static profil data;
     private static String nomfic ="saveprofil";
     private static AccesLocal accesLocal;
 
@@ -25,9 +22,9 @@ public class Controle {
 
     }
 
-    public  void creerdata(String name,String user,String password, Boolean osolien)
+    public  void creerdata(int ID,String name,String user,String password,String Email, Boolean osolien)
     {
-        data=new Data(name,user,password,osolien);
+        data=new profil(ID,name,user,password,Email,osolien);
         accesLocal.ajout(data);
     }
 
