@@ -1,8 +1,13 @@
 package com.example.osolapp;
 
+import android.app.LauncherActivity;
 import android.provider.ContactsContract;
 
+import org.json.JSONArray;
+
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class profil implements Serializable {
 
@@ -34,4 +39,15 @@ public class profil implements Serializable {
     public String getEmail() {return Email; }
 
     public boolean Osolien() { return Osolien; }
+
+    public JSONArray convertToJSONarray(){
+        List LaListe = new ArrayList();
+        LaListe.add(ID);
+        LaListe.add(Name);
+        LaListe.add(User);
+        LaListe.add(Password);
+        LaListe.add(Email);
+        LaListe.add(Osolien);
+        return new JSONArray(LaListe);
+    }
 }
