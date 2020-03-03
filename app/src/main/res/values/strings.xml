@@ -17,4 +17,5 @@
     <string name="Temp">Température</string>
     <string name="Bat">Info Batterie</string>
     <string name="title_activity_creation_compte">creation_compte</string>
+    <string name="question">êtes-vous O\'Solien ?</string>
 </resources>

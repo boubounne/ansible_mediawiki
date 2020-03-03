@@ -19,8 +19,8 @@ public class profil implements Serializable {
     private String Email;
     private boolean Osolien;
 
-    public profil(int ID,String Name, String User, String Password,String Email, boolean Osolien){
-        this.ID=ID;
+    public profil(String Name, String User, String Password,String Email, boolean Osolien){
+
         this.Name=Name;
         this.User=User;
         this.Password=Password;

@@ -36,7 +36,7 @@ public class AccesLocal {
             String Password=curseur.getString(3);
             String Email=curseur.getString(4);
             boolean Osolien=curseur.getWantsAllOnMoveCalls();
-            data=new profil(ID,Name,User,Password,Email,Osolien);
+            data=new profil(Name,User,Password,Email,Osolien);
             }
         curseur.close();
         return data;

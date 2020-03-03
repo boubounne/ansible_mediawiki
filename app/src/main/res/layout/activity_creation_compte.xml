@@ -109,15 +109,16 @@
         android:padding="10dp"
         android:text="@string/Question" />
 
-    <Spinner
-        android:id="@+id/spinner1"
+    <CheckBox
+        android:id="@+id/checkbox1"
         android:layout_width="239dp"
         android:layout_height="40dp"
         android:layout_marginLeft="150dp"
         android:layout_marginRight="20dp"
+        android:checked="false"
         android:entries="@array/Choice"
         android:padding="15dp"
-        android:prompt="@string/Question" />
+        android:text="@string/question" />
 
     <RelativeLayout
         android:layout_width="match_parent"
