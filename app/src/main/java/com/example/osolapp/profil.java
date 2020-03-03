@@ -12,7 +12,6 @@ import java.util.List;
 public class profil implements Serializable {
 
 
-    private int ID;
     private String Name;
     private  String User;
     private String Password;
@@ -28,7 +27,6 @@ public class profil implements Serializable {
         this.Osolien=Osolien;
     }
 
-    public int getID() {return ID; }
 
     public String getName() {return Name; }
 
@@ -42,7 +40,6 @@ public class profil implements Serializable {
 
     public JSONArray convertToJSONarray(){
         List LaListe = new ArrayList();
-        LaListe.add(ID);
         LaListe.add(Name);
         LaListe.add(User);
         LaListe.add(Password);

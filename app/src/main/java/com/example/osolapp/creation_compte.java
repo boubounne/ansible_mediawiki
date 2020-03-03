@@ -30,7 +30,7 @@ public class creation_compte extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creation_compte);
-
+        init();
     }
 
     private void init(){

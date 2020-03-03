@@ -17,8 +17,8 @@ public class AccesLocal {
 
     public void ajout(profil data){
         bd = accesBD.getWritableDatabase();
-        String req="insert into Data (ID,Name,User,Password,Email,Osoloen) values ";
-        req +="(\""+data.getID()+"\",\""+data.getName()+"\",\""+data.getUser()+"\","+data.getPassword()+"\",\""+data.getEmail()+"\",\""+data.Osolien()+"\"";
+        String req="insert into Data (Name,User,Password,Email,Osoloen) values ";
+        req +="(\",\""+data.getName()+"\",\""+data.getUser()+"\","+data.getPassword()+"\",\""+data.getEmail()+"\",\""+data.Osolien()+"\"";
         bd.execSQL(req);
     }
 

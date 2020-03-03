@@ -11,7 +11,6 @@ public class mySQLiteOpenHelper extends SQLiteOpenHelper {
 
 
     private String creation="create table Data("
-        +"ID INTEGER PRIMARY KEY,"
         +"Name TEXT NOT NULL,"
         +"User TEXT NOT NULL,"
         +"Password TEXT NOT NULL,"
