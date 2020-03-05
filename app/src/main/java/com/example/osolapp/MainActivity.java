@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String IS_SHOWN = "IS_SHOWN";
     private boolean isShown = true;
     Button button1;
+    private DatabaseManager databaseManager;
 
 
     @Override
@@ -46,11 +47,16 @@ public class MainActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Intent intent = new Intent(MainActivity.this,creation_compte.class);
-            intent.putExtra(IS_SHOWN,isShown);
-            startActivity(intent);
+                Intent intent = new Intent(MainActivity.this,creation_compte.class);
+                intent.putExtra(IS_SHOWN,isShown);
+                startActivity(intent);
             }
         });
+
+        databaseManager = new DatabaseManager(this);
+        databaseManager.InsertUSer("Alexandre", "alexdu94", "alex@devinci", "azertyuiop");
+        databaseManager.InsertUSer("Vincent", "Vincent du 13", "vincent@devinci", "qwertyuiop");
+        databaseManager.close();
     }
 
 
