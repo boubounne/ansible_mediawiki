@@ -16,15 +16,15 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="152dp"
-        android:text="Connection User"
+        android:layout_height="111dp"
         android:layout_gravity="center_vertical"
+        android:text="Connection User"
         android:textSize="45sp" />
 
     <TextView
         android:id="@+id/textblanc2"
         android:layout_width="match_parent"
-        android:layout_height="105dp"
+        android:layout_height="wrap_content"
         android:text=""
         android:textSize="45sp" />
 
@@ -64,14 +64,63 @@
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="109dp"
             tools:layout_editor_absoluteY="536dp" />
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="141dp"
+            android:layout_marginEnd="114dp"
+            android:text="a-z"
+            android:textColor="#ff3333"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="266dp"
+            android:layout_marginTop="96dp"
+            android:text="A-Z"
+            android:textColor="#ff3333"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="93dp"
+            android:text="0-9"
+            android:textColor="#ff3333"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="137dp"
+            android:text="8 characters"
+            android:textColor="#ff3333"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/button_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/password_user"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="18dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="87dp"
+            android:layout_marginEnd="150dp"
             android:text="@string/button_val" />
 
         <TextView

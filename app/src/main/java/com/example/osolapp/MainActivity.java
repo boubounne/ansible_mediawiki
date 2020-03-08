@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         databaseManager = new DatabaseManager(this);
+        //databaseManager.InsertUSer("vincent","vince","vincent@devinci.fr","ibo7");
         //databaseManager.InsertUSer("Alexandre", "alexdu94", "alex@devinci", "ibo3");
         //databaseManager.InsertUSer("Vincent", "Vincentdu13", "vincent@devinci", "ibo7");
         databaseManager.close();
