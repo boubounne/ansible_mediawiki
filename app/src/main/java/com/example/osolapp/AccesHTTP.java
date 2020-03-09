@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 import java.util.ArrayList;
 
-
+/*
 public class AccesHTTP extends AsyncTask<String, Integer,Long>{
 
     private ArrayList<NameValuePair> parametres;
@@ -65,3 +65,4 @@ public class AccesHTTP extends AsyncTask<String, Integer,Long>{
 
      }
 }
+*/

@@ -4,7 +4,7 @@ import android.content.Context;
 
 import org.json.JSONArray;
 
-public class Controle {
+/*public class Controle {
     private static Controle instance=null;
     private static profil data;
     private static String nomfic ="saveprofil";
@@ -64,4 +64,4 @@ public class Controle {
     }
 
 
-}
+}*/

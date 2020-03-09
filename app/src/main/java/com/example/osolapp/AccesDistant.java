@@ -6,7 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class AccesDistant implements  AsyncResponse {
+/*public class AccesDistant implements  AsyncResponse {
 
     private static final String SERVERADDR = "http://172.18.106.193/user_pico/serveur_pico.php";
     private Controle controle;
@@ -56,3 +56,4 @@ public class AccesDistant implements  AsyncResponse {
         accesDonnees.execute(SERVERADDR);
     }
 }
+*/

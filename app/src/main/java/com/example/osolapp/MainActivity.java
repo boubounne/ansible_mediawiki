@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean isShown = true;
     Button button1;
     private DatabaseManager databaseManager;
+    SQLiteDataBaseHelper db;
 
 
     @Override
@@ -53,11 +54,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        databaseManager = new DatabaseManager(this);
-        //databaseManager.InsertUSer("vincent","vince","vincent@devinci.fr","ibo7");
-        //databaseManager.InsertUSer("Alexandre", "alexdu94", "alex@devinci", "ibo3");
-        //databaseManager.InsertUSer("Vincent", "Vincentdu13", "vincent@devinci", "ibo7");
-        databaseManager.close();
+        ProfilManager pm = new ProfilManager(this);
+        pm.open();
+        pm.addProfil(new profil("alexandre", "alex", "azerty", "alex@devinci", true));
+
     }
 
 

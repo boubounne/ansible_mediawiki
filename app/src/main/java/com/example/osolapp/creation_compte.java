@@ -1,5 +1,6 @@
 package com.example.osolapp;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -24,14 +25,16 @@ public class creation_compte extends AppCompatActivity {
     public EditText Password2;
     public CheckBox Osolien;
     public Button Register;
-    public Controle controle;
+    //public Controle controle;
+    SQLiteDataBaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creation_compte);
-        init();
+        //init();
     }
+
 
     private void init(){
         this.Name = findViewById(R.id.et_name);
@@ -41,10 +44,10 @@ public class creation_compte extends AppCompatActivity {
         this.Password2 = findViewById(R.id.et_repassword);
         this.Osolien = findViewById(R.id.checkbox1);
         this.Register = findViewById(R.id.btn_register);
-        this.controle = Controle.getInstance(this);
+        //this.controle = Controle.getInstance(this);
     }
 
-    public void recupProfil(){
+    /*public void recupProfil(){
         if (controle.getName() != null){
             this.Name.setText(controle.getName().toString());
             this.User.setText(controle.getUser().toString());
@@ -56,6 +59,6 @@ public class creation_compte extends AppCompatActivity {
             }
             ((Button)findViewById(R.id.btn_register)).performClick();
         }
-    }
+    }*/
 
 }
