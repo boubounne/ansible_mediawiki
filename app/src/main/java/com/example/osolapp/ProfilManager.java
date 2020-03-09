@@ -17,8 +17,8 @@ public class ProfilManager {
             + KEY_ID_PROFIL + " TEXT primary key, "
             + KEY_NAME_PROFIL + " TEXT, "
             + KEY_MAIL_PROFIL + " TEXT, "
-            + KEY_PASSWORD_PROFIL + "TEXT, "
-            + KEY_OSOLIEN + "BOOLEAN);";
+            + KEY_PASSWORD_PROFIL + " TEXT, "
+            + KEY_OSOLIEN + " BOOLEAN);";
     private SQLiteDatabase db;
     private MySQLite myBase;
 
