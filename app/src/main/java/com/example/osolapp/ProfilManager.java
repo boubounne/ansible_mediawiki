@@ -77,7 +77,17 @@ public class ProfilManager {
         return p;
     }
 
+    public String getPassword(String user){
+        Cursor c = db.rawQuery("SELECT password FROM "+TABLE_NAME + " WHERE " + KEY_ID_PROFIL + "=" + user+";", null);
+        String pass="";
+        if (c.moveToFirst()){
+            pass=(c.getString(c.getColumnIndex(KEY_PASSWORD_PROFIL)));
+            c.close();
+        }
+        return pass;
+    }
+
     public Cursor getProfils(){
-        return db.rawQuery("SELECT * FROM "+TABLE_NAME, null);
+        return db.rawQuery("SELECT * FROM "+TABLE_NAME+";", null);
     }
 }

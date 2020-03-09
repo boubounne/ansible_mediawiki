@@ -97,6 +97,7 @@ public class creation_compte extends AppCompatActivity {
                     profil newProfil = new profil(name, user, password, mail, osolien);
                     pm.open();
                     pm.addProfil(newProfil);
+                    pm.close();
                     Toast.makeText(creation_compte.this, "Compte ajouté à la BDD ;)",
                             Toast.LENGTH_LONG).show();
                 }else {
