@@ -25,18 +25,13 @@ public class creation_compte extends AppCompatActivity {
     public EditText Password2;
     public CheckBox Osolien;
     public Button Register;
-    //public Controle controle;
-    SQLiteDataBaseHelper db;
+
+    ProfilManager pm = new ProfilManager(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creation_compte);
-        //init();
-    }
-
-
-    private void init(){
         this.Name = findViewById(R.id.et_name);
         this.User = findViewById(R.id.user);
         this.Mail = findViewById(R.id.et_email);
@@ -44,8 +39,28 @@ public class creation_compte extends AppCompatActivity {
         this.Password2 = findViewById(R.id.et_repassword);
         this.Osolien = findViewById(R.id.checkbox1);
         this.Register = findViewById(R.id.btn_register);
-        //this.controle = Controle.getInstance(this);
+
+        this.Register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = Name.getText().toString();
+                String user = User.getText().toString();
+                String mail = Mail.getText().toString();
+                String password = Password.getText().toString();
+                String password2 = Password2.getText().toString();
+                boolean osolien = false;
+                if (Osolien.isChecked())
+                    osolien = true;
+
+                profil newProfil = new profil(name, user, password, mail, osolien);
+                pm.open();
+                pm.addProfil(newProfil);
+            }
+        });
     }
+
+
+
 
     /*public void recupProfil(){
         if (controle.getName() != null){
