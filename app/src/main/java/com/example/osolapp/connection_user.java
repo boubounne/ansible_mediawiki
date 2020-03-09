@@ -26,6 +26,8 @@ public class connection_user extends AppCompatActivity {
     String mot_de_passe;
     String utilisateur;
     TextView tv_1, tv_2, tv_3,tv_4;
+    ProfilManager pm = new ProfilManager(this);
+
 
 
     public void validatePassword(String password){

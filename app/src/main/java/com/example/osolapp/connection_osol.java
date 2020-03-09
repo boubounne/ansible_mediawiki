@@ -27,9 +27,11 @@ public class connection_osol extends AppCompatActivity {
     String mot_de_passe;
     String utilisateur;
     TextView tv_1, tv_2, tv_3,tv_4;
+    ProfilManager pm = new ProfilManager(this);
 
 
-    public void validatePassword(String password){
+
+    public int validatePassword(String password){
 
         Pattern upperCase = Pattern.compile("[A-Z]");
         Pattern lowerCase = Pattern.compile("[a-z]");
@@ -62,7 +64,7 @@ public class connection_osol extends AppCompatActivity {
             tv_4.setTextColor(Color.GREEN);
             counter=counter+1;
         }
-
+        return counter;
     }
 
     @Override
@@ -100,16 +102,17 @@ public class connection_osol extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 utilisateur=edit_user.getText().toString();
-
-                String mdp="SELECT password FROM users WHERE user="+utilisateur+"";
-                if(mdp!=null) {
-                    if (mdp == mot_de_passe) {
+                pm.open();
+                profil p=pm.getProfil(utilisateur);
+                mot_de_passe=edit_mdp.getText().toString();
+                if(mot_de_passe!=null) {
+                    if (p.getPassword() == mot_de_passe) {
                         Intent intent = new Intent(connection_osol.this, info_pico_osol.class);
                         intent.putExtra(IS_SHOWN, isShown);
                         startActivity(intent);
                     } else {
 
-                        Toast.makeText(connection_osol.this, "mot de passe incorrect"+mdp,
+                        Toast.makeText(connection_osol.this, "mot de passe incorrect",
                                 Toast.LENGTH_LONG).show();
                     }
                 }else {

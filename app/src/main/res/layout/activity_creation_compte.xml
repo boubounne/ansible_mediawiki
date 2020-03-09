@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -47,56 +46,56 @@
         android:id="@+id/user"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="User"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
-        android:padding="10dp"
-        android:inputType="textPersonName"
-        android:fontFamily="roboto_regular"
         android:background="@drawable/border"
+        android:fontFamily="roboto_regular"
+        android:hint="User"
+        android:inputType="textPersonName"
+        android:padding="10dp"
         android:textSize="15sp" />
 
     <EditText
         android:id="@+id/et_email"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="e_mail"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
-        android:padding="10dp"
-        android:fontFamily="roboto_regular"
-        android:inputType="textEmailAddress"
         android:background="@drawable/border"
+        android:fontFamily="roboto_regular"
+        android:hint="e_mail"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
         android:textSize="15sp" />
 
     <EditText
         android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="@string/password"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
-        android:padding="10dp"
-        android:fontFamily="roboto_regular"
-        android:inputType="textPassword"
         android:background="@drawable/border"
+        android:fontFamily="roboto_regular"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:padding="10dp"
         android:textSize="15sp" />
 
     <EditText
         android:id="@+id/et_repassword"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="re_type_password"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
-        android:padding="10dp"
-        android:fontFamily="roboto_regular"
-        android:inputType="textPassword"
         android:background="@drawable/border"
+        android:fontFamily="roboto_regular"
+        android:hint="re_type_password"
+        android:inputType="textPassword"
+        android:padding="10dp"
         android:textSize="15sp" />
 
     <TextView
@@ -131,9 +130,9 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/border"
         android:fontFamily="roboto_regular"
+        android:paddingVertical="10dp"
         android:text="register"
-        android:textColor="@android:color/white"
-        android:paddingVertical="10dp"/>
+        android:textColor="@android:color/white" />
 
 
 </LinearLayout>

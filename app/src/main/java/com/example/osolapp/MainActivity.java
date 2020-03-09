@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     public static final String IS_SHOWN = "IS_SHOWN";
     private boolean isShown = true;
     Button button1;
-    private DatabaseManager databaseManager;
     SQLiteDataBaseHelper db;
 
 

@@ -1,6 +1,7 @@
 package com.example.osolapp;
 
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -15,6 +16,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.regex.Pattern;
 
 public class creation_compte extends AppCompatActivity {
 
@@ -25,8 +30,44 @@ public class creation_compte extends AppCompatActivity {
     public EditText Password2;
     public CheckBox Osolien;
     public Button Register;
-
+    TextView tv_1, tv_2, tv_3,tv_4;
     ProfilManager pm = new ProfilManager(this);
+
+    public int validatePassword(String password){
+
+        Pattern upperCase = Pattern.compile("[A-Z]");
+        Pattern lowerCase = Pattern.compile("[a-z]");
+        Pattern digitcase = Pattern.compile("[0-9]");
+        int counter=0;
+        if(!lowerCase.matcher(password).find()){
+            tv_1.setTextColor(Color.RED);
+        }else{
+            tv_1.setTextColor(Color.GREEN);
+            counter=counter+1;
+        }
+
+        if(!upperCase.matcher(password).find()){
+            tv_2.setTextColor(Color.RED);
+        }else{
+            tv_2.setTextColor(Color.GREEN);
+            counter=counter+1;
+        }
+
+        if(!digitcase.matcher(password).find()){
+            tv_3.setTextColor(Color.RED);
+        }else{
+            tv_3.setTextColor(Color.GREEN);
+            counter=counter+1;
+        }
+
+        if(password.length() <8){
+            tv_4.setTextColor(Color.RED);
+        }else{
+            tv_4.setTextColor(Color.GREEN);
+            counter=counter+1;
+        }
+        return counter;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +89,20 @@ public class creation_compte extends AppCompatActivity {
                 String mail = Mail.getText().toString();
                 String password = Password.getText().toString();
                 String password2 = Password2.getText().toString();
-                boolean osolien = false;
-                if (Osolien.isChecked())
-                    osolien = true;
+                if (password==password2) {
+                    boolean osolien = false;
+                    if (Osolien.isChecked())
+                        osolien = true;
 
-                profil newProfil = new profil(name, user, password, mail, osolien);
-                pm.open();
-                pm.addProfil(newProfil);
+                    profil newProfil = new profil(name, user, password, mail, osolien);
+                    pm.open();
+                    pm.addProfil(newProfil);
+                    Toast.makeText(creation_compte.this, "Compte ajouté à la BDD ;)",
+                            Toast.LENGTH_LONG).show();
+                }else {
+                    Toast.makeText(creation_compte.this, "Les 2 Passwords sont différents :("+password+"...." +password2,
+                            Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
