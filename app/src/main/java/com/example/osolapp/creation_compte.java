@@ -89,7 +89,7 @@ public class creation_compte extends AppCompatActivity {
                 String mail = Mail.getText().toString();
                 String password = Password.getText().toString();
                 String password2 = Password2.getText().toString();
-                if (password==password2) {
+                if (password.equals(password2)) {
                     boolean osolien = false;
                     if (Osolien.isChecked())
                         osolien = true;
@@ -100,7 +100,7 @@ public class creation_compte extends AppCompatActivity {
                     Toast.makeText(creation_compte.this, "Compte ajouté à la BDD ;)",
                             Toast.LENGTH_LONG).show();
                 }else {
-                    Toast.makeText(creation_compte.this, "Les 2 Passwords sont différents :("+password+"...." +password2,
+                    Toast.makeText(creation_compte.this, "Les 2 Passwords sont différents :(",
                             Toast.LENGTH_LONG).show();
                 }
             }

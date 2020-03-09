@@ -104,9 +104,11 @@ public class connection_osol extends AppCompatActivity {
                 utilisateur=edit_user.getText().toString();
                 pm.open();
                 profil p=pm.getProfil(utilisateur);
+                Toast.makeText(connection_osol.this, p.getPassword(),
+                        Toast.LENGTH_LONG).show();
                 mot_de_passe=edit_mdp.getText().toString();
                 if(mot_de_passe!=null) {
-                    if (p.getPassword() == mot_de_passe) {
+                    if (p.getPassword().equals(mot_de_passe)) {
                         Intent intent = new Intent(connection_osol.this, info_pico_osol.class);
                         intent.putExtra(IS_SHOWN, isShown);
                         startActivity(intent);
