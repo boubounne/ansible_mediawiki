@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         ProfilManager pm = new ProfilManager(this);
         pm.open();
         pm.addProfil(new profil("alexandre", "alex", "azerty", "alex@devinci", true));
-
+        pm.addProfil(new profil("corentin", "cjpm", "aaa", "cjpm@devinci", false));
     }
 
 

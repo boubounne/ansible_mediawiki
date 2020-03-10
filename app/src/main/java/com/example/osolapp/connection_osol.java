@@ -109,20 +109,26 @@ public class connection_osol extends AppCompatActivity {
                 Toast.makeText(connection_osol.this, p.getPassword(),
                         Toast.LENGTH_LONG).show();
                 mot_de_passe=edit_mdp.getText().toString();
-                if(mot_de_passe.equals(null) || utilisateur.equals(null)) {
-                    if (p.getPassword().equals(mot_de_passe)) {
-                        Intent intent = new Intent(connection_osol.this, info_pico_osol.class);
-                        intent.putExtra(IS_SHOWN, isShown);
-                        startActivity(intent);
-                    } else {
+                if(mot_de_passe.equals("") || utilisateur.equals("")) {
+                    Toast.makeText(connection_osol.this, "nom d'utilisateur et/ou mot de passe absent",
+                            Toast.LENGTH_LONG).show();
+                }else {
+                    if (p.getOsolien()){
+                        if (p.getPassword().equals(mot_de_passe)) {
+                            Intent intent = new Intent(connection_osol.this, info_pico_osol.class);
+                            intent.putExtra(IS_SHOWN, isShown);
+                            startActivity(intent);
+                        } else {
 
-                        Toast.makeText(connection_osol.this, "nom d'utilisateur et/ou mot de passe incorrect",
+                            Toast.makeText(connection_osol.this, "nom d'utilisateur et/ou mot de passe incorrect",
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    else {
+                        Toast.makeText(connection_osol.this, "vous n'êtes pas un utilisateur osolien",
                                 Toast.LENGTH_LONG).show();
                     }
-                }else {
 
-                    Toast.makeText(connection_osol.this, "nom d'utilisateur et/ou mot de passe incorrect",
-                            Toast.LENGTH_LONG).show();
                 }
             }
         });

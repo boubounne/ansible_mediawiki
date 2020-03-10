@@ -73,7 +73,11 @@ public class ProfilManager {
             String Name = c.getString(c.getColumnIndex(KEY_NAME_PROFIL));
             String Mail = c.getString(c.getColumnIndex(KEY_MAIL_PROFIL));
             String Password = c.getString(c.getColumnIndex(KEY_PASSWORD_PROFIL));
-            Boolean Osolien = Boolean.parseBoolean(c.getString(c.getColumnIndex(KEY_OSOLIEN)));
+            Boolean Osolien = false;
+            Boolean.parseBoolean(c.getString(c.getColumnIndex(KEY_OSOLIEN)));
+            if (c.getString(c.getColumnIndex(KEY_OSOLIEN)).equals("1")){
+                Osolien = true;
+            }
             c.close();
             profil p = new profil(Name, User, Password, Mail, Osolien);
             return p;
