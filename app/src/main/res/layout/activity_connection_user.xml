@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="111dp"
         android:layout_gravity="center_vertical"
-        android:text="Connection User"
+        android:text="@string/Title"
         android:textSize="45sp" />
 
     <TextView
