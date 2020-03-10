@@ -20,7 +20,7 @@ public class connection_user extends AppCompatActivity {
     private static final int NEXT_REQUEST_CODE=0;
     public static final String IS_SHOWN = "IS_SHOWN";
     private boolean isShown = true;
-    private Button button_user;
+    Button button_user;
     EditText edit_user;
     EditText edit_mdp;
     String mot_de_passe;
@@ -29,37 +29,40 @@ public class connection_user extends AppCompatActivity {
     ProfilManager pm = new ProfilManager(this);
 
 
-
-    public void validatePassword(String password){
+    public int validatePassword(String password){
 
         Pattern upperCase = Pattern.compile("[A-Z]");
         Pattern lowerCase = Pattern.compile("[a-z]");
         Pattern digitcase = Pattern.compile("[0-9]");
-
+        int counter=0;
         if(!lowerCase.matcher(password).find()){
             tv_1.setTextColor(Color.RED);
         }else{
             tv_1.setTextColor(Color.GREEN);
+            counter=counter+1;
         }
 
         if(!upperCase.matcher(password).find()){
             tv_2.setTextColor(Color.RED);
         }else{
             tv_2.setTextColor(Color.GREEN);
+            counter=counter+1;
         }
 
         if(!digitcase.matcher(password).find()){
             tv_3.setTextColor(Color.RED);
         }else{
             tv_3.setTextColor(Color.GREEN);
+            counter=counter+1;
         }
 
         if(password.length() <8){
             tv_4.setTextColor(Color.RED);
         }else{
             tv_4.setTextColor(Color.GREEN);
+            counter=counter+1;
         }
-
+        return counter;
     }
 
 
@@ -100,17 +103,36 @@ public class connection_user extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 utilisateur=edit_user.getText().toString();
-                String mdp="SELECT password FROM users WHERE user="+utilisateur+"";
-                if(mdp==mot_de_passe) {
-                    Intent intent = new Intent(connection_user.this, info_pico_user.class);
-                    intent.putExtra(IS_SHOWN, isShown);
-                    startActivity(intent);
-                }else {
-                    Toast.makeText(connection_user.this,"mot de passe incorrect",
+                pm.open();
+                profil p=pm.getProfil(utilisateur);
+                pm.close();
+                Toast.makeText(connection_user.this, p.getPassword(),
+                        Toast.LENGTH_LONG).show();
+                mot_de_passe=edit_mdp.getText().toString();
+                if(mot_de_passe.equals("") || utilisateur.equals("")) {
+                    Toast.makeText(connection_user.this, "nom d'utilisateur et/ou mot de passe absent",
                             Toast.LENGTH_LONG).show();
+                }else {
+                    if (!p.getOsolien()){
+                        if (p.getPassword().equals(mot_de_passe)) {
+                            Intent intent = new Intent(connection_user.this, info_pico_osol.class);
+                            intent.putExtra(IS_SHOWN, isShown);
+                            startActivity(intent);
+                        } else {
+
+                            Toast.makeText(connection_user.this, "nom d'utilisateur et/ou mot de passe incorrect",
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    else {
+                        Toast.makeText(connection_user.this, "vous n'êtes pas un utilisateur normal",
+                                Toast.LENGTH_LONG).show();
+                    }
+
                 }
             }
         });
+
     }
 
 
