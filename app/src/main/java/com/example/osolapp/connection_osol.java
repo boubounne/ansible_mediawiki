@@ -31,40 +31,34 @@ public class connection_osol extends AppCompatActivity {
 
 
 
-    public int validatePassword(String password){
+    public void validatePassword(String password){
 
         Pattern upperCase = Pattern.compile("[A-Z]");
         Pattern lowerCase = Pattern.compile("[a-z]");
         Pattern digitcase = Pattern.compile("[0-9]");
-        int counter=0;
         if(!lowerCase.matcher(password).find()){
             tv_1.setTextColor(Color.RED);
         }else{
             tv_1.setTextColor(Color.GREEN);
-            counter=counter+1;
         }
 
         if(!upperCase.matcher(password).find()){
             tv_2.setTextColor(Color.RED);
         }else{
             tv_2.setTextColor(Color.GREEN);
-            counter=counter+1;
         }
 
         if(!digitcase.matcher(password).find()){
             tv_3.setTextColor(Color.RED);
         }else{
             tv_3.setTextColor(Color.GREEN);
-            counter=counter+1;
         }
 
         if(password.length() <8){
             tv_4.setTextColor(Color.RED);
         }else{
             tv_4.setTextColor(Color.GREEN);
-            counter=counter+1;
         }
-        return counter;
     }
 
     @Override
@@ -104,32 +98,34 @@ public class connection_osol extends AppCompatActivity {
             public void onClick(View v) {
                 utilisateur=edit_user.getText().toString();
                 pm.open();
-                //profil p=pm.getProfil(utilisateur);
-                String passwordd=pm.getPassword(utilisateur);
+                profil p=pm.getProfil(utilisateur);
                 pm.close();
-                //Toast.makeText(connection_osol.this, p.getPassword(),
-                  //      Toast.LENGTH_LONG).show();
                 mot_de_passe=edit_mdp.getText().toString();
-                if(mot_de_passe!=null) {
-                    if (passwordd.equals(mot_de_passe)) {
-                        Intent intent = new Intent(connection_osol.this, info_pico_osol.class);
-                        intent.putExtra(IS_SHOWN, isShown);
-                        startActivity(intent);
-                    } else {
+                if(mot_de_passe.equals("") || utilisateur.equals("")) {
+                    Toast.makeText(connection_osol.this, "nom d'utilisateur et/ou mot de passe absent",
+                            Toast.LENGTH_LONG).show();
+                }else {
+                    if (p.getOsolien()){
+                        if (p.getPassword().equals(mot_de_passe)) {
+                            Intent intent = new Intent(connection_osol.this, info_pico_osol.class);
+                            intent.putExtra(IS_SHOWN, isShown);
+                            startActivity(intent);
+                        } else {
 
-                        Toast.makeText(connection_osol.this, "mot de passe incorrect",
+                            Toast.makeText(connection_osol.this, "nom d'utilisateur et/ou mot de passe incorrect",
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    else {
+                        Toast.makeText(connection_osol.this, "vous n'êtes pas un utilisateur osolien",
                                 Toast.LENGTH_LONG).show();
                     }
-                }else {
 
-                    Toast.makeText(connection_osol.this, "nom d'utilisateur incorrect",
-                            Toast.LENGTH_LONG).show();
                 }
-
             }
         });
 
 
 
-}
+    }
 }

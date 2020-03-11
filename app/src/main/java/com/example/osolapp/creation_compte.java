@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.system.Os;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -32,6 +34,7 @@ public class creation_compte extends AppCompatActivity {
     public Button Register;
     TextView tv_1, tv_2, tv_3,tv_4;
     ProfilManager pm = new ProfilManager(this);
+    int compteur;
 
     public int validatePassword(String password){
 
@@ -69,6 +72,7 @@ public class creation_compte extends AppCompatActivity {
         return counter;
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +85,31 @@ public class creation_compte extends AppCompatActivity {
         this.Osolien = findViewById(R.id.checkbox1);
         this.Register = findViewById(R.id.btn_register);
 
+
+        tv_1=findViewById(R.id.tv_1);
+        tv_2=findViewById(R.id.tv_2);
+        tv_3=findViewById(R.id.tv_3);
+        tv_4=findViewById(R.id.tv_4);
+
+        Password.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String mot_de_passe=Password.getText().toString();
+                compteur=validatePassword(mot_de_passe);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
         this.Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,19 +118,24 @@ public class creation_compte extends AppCompatActivity {
                 String mail = Mail.getText().toString();
                 String password = Password.getText().toString();
                 String password2 = Password2.getText().toString();
-                if (password.equals(password2)) {
-                    boolean osolien = false;
-                    if (Osolien.isChecked())
-                        osolien = true;
+                if(compteur==4){
+                    if (password.equals(password2)) {
+                        boolean osolien = false;
+                        if (Osolien.isChecked())
+                            osolien = true;
 
-                    profil newProfil = new profil(name, user, password, mail, osolien);
-                    pm.open();
-                    pm.addProfil(newProfil);
-                    pm.close();
-                    Toast.makeText(creation_compte.this, "Compte ajouté à la BDD ;)",
-                            Toast.LENGTH_LONG).show();
-                }else {
-                    Toast.makeText(creation_compte.this, "Les 2 Passwords sont différents :(",
+                        profil newProfil = new profil(name, user, password, mail, osolien);
+                        pm.open();
+                        pm.addProfil(newProfil);
+                        pm.close();
+                        Toast.makeText(creation_compte.this, "Compte ajouté à la BDD ;)",
+                                Toast.LENGTH_LONG).show();
+                    }else {
+                        Toast.makeText(creation_compte.this, "Les 2 Passwords sont différents :(",
+                                Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(creation_compte.this, "Attention aux 4 contraintes",
                             Toast.LENGTH_LONG).show();
                 }
             }

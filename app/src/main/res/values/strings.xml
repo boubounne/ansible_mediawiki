@@ -18,4 +18,5 @@
     <string name="Bat">Info Batterie</string>
     <string name="title_activity_creation_compte">creation_compte</string>
     <string name="question">êtes-vous O\'Solien ?</string>
+    <string name="Title">Connection User</string>
 </resources>

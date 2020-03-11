@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.widget.Toast;
 
 public class ProfilManager {
     private static final String TABLE_NAME = "profil";
@@ -63,22 +65,28 @@ public class ProfilManager {
     }
 
     public profil getProfil(String user){
-        profil p = new profil(user);
-        Cursor c = db.rawQuery("SELECT * FROM "+TABLE_NAME + " WHERE " + KEY_ID_PROFIL + "=" + user, null);
-        if (c.moveToFirst()){
-            p.setUser(c.getString(c.getColumnIndex(KEY_ID_PROFIL)));
-            p.setName(c.getString(c.getColumnIndex(KEY_NAME_PROFIL)));
-            p.setEmail(c.getString(c.getColumnIndex(KEY_MAIL_PROFIL)));
-            p.setPassword(c.getString(c.getColumnIndex(KEY_PASSWORD_PROFIL)));
-            p.setOsolien(Boolean.parseBoolean(c.getString(c.getColumnIndex(KEY_OSOLIEN))));
-            c.close();
 
+        Cursor c = db.rawQuery("SELECT * FROM "+TABLE_NAME + " WHERE " + KEY_ID_PROFIL + "= ?", new String[]{user});
+        if (c.moveToFirst()){
+            Log.i("found", "ffff");
+            String User = c.getString(c.getColumnIndex(KEY_ID_PROFIL));
+            String Name = c.getString(c.getColumnIndex(KEY_NAME_PROFIL));
+            String Mail = c.getString(c.getColumnIndex(KEY_MAIL_PROFIL));
+            String Password = c.getString(c.getColumnIndex(KEY_PASSWORD_PROFIL));
+            Boolean Osolien = false;
+            Boolean.parseBoolean(c.getString(c.getColumnIndex(KEY_OSOLIEN)));
+            if (c.getString(c.getColumnIndex(KEY_OSOLIEN)).equals("1")){
+                Osolien = true;
+            }
+            c.close();
+            profil p = new profil(Name, User, Password, Mail, Osolien);
+            return p;
         }
-        return p;
+        return new profil("", "","","",false);
     }
 
     public String getPassword(String user){
-        Cursor c = db.rawQuery("SELECT password FROM "+TABLE_NAME + " WHERE " + KEY_ID_PROFIL + "=" + user+";", null);
+        Cursor c = db.rawQuery("SELECT password FROM "+TABLE_NAME + " WHERE " + KEY_ID_PROFIL + "= ?", new String[]{user});
         String pass="";
         if (c.moveToFirst()){
             pass=(c.getString(c.getColumnIndex(KEY_PASSWORD_PROFIL)));
@@ -88,6 +96,6 @@ public class ProfilManager {
     }
 
     public Cursor getProfils(){
-        return db.rawQuery("SELECT * FROM "+TABLE_NAME+";", null);
+        return db.rawQuery("SELECT * FROM "+TABLE_NAME, null);
     }
 }
