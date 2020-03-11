@@ -19,4 +19,7 @@
     <string name="title_activity_creation_compte">creation_compte</string>
     <string name="question">êtes-vous O\'Solien ?</string>
     <string name="Title">Connection User</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

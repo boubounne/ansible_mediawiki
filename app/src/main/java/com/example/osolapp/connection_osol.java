@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -66,8 +67,8 @@ public class connection_osol extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connection_osol);
         buttonosol=findViewById(R.id.button_osol);
-        edit_user=(EditText)findViewById(R.id.user_sol);
-        edit_mdp=(EditText)findViewById(R.id.password_sol);
+        edit_user=(EditText)findViewById(R.id.user);
+        edit_mdp=(EditText)findViewById(R.id.password);
         mot_de_passe=edit_mdp.getText().toString();
         tv_1=findViewById(R.id.tv_1);
         tv_2=findViewById(R.id.tv_2);

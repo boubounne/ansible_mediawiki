@@ -36,6 +36,21 @@ public class creation_compte extends AppCompatActivity {
     ProfilManager pm = new ProfilManager(this);
     int compteur;
 
+
+    public boolean validetaMail(String mail){
+        boolean Adress=false;
+        for(int i=5; i<=mail.length(); i++)
+        {
+            if(mail.contains("@") && (mail.contains(".fr") || mail.contains(".com"))){
+                Adress=true;
+            }else{
+                Toast.makeText(creation_compte.this, "il manque le @ ou le .XXX",
+                        Toast.LENGTH_LONG).show();
+            }
+        }
+        return Adress;
+    }
+
     public int validatePassword(String password){
 
         Pattern upperCase = Pattern.compile("[A-Z]");
@@ -116,29 +131,43 @@ public class creation_compte extends AppCompatActivity {
                 String name = Name.getText().toString();
                 String user = User.getText().toString();
                 String mail = Mail.getText().toString();
+                Boolean validMail=validetaMail(mail);
                 String password = Password.getText().toString();
                 String password2 = Password2.getText().toString();
-                if(compteur==4){
-                    if (password.equals(password2)) {
-                        boolean osolien = false;
-                        if (Osolien.isChecked())
-                            osolien = true;
-
-                        profil newProfil = new profil(name, user, password, mail, osolien);
-                        pm.open();
-                        pm.addProfil(newProfil);
-                        pm.close();
-                        Toast.makeText(creation_compte.this, "Compte ajouté à la BDD ;)",
-                                Toast.LENGTH_LONG).show();
-                    }else {
-                        Toast.makeText(creation_compte.this, "Les 2 Passwords sont différents :(",
-                                Toast.LENGTH_LONG).show();
-                    }
-                }else{
-                    Toast.makeText(creation_compte.this, "Attention aux 4 contraintes",
+                if(name.equals("") || user.equals("") || mail.equals("") || password.equals("")){
+                    Toast.makeText(creation_compte.this, "Veuillez remplir toutes les cases",
                             Toast.LENGTH_LONG).show();
+                }else{
+                    if(validMail==true){
+                        if(compteur==4){
+                            if (password.equals(password2)) {
+                                boolean osolien = false;
+                                if (Osolien.isChecked())
+                                    osolien = true;
+
+                                profil newProfil = new profil(name, user, password, mail, osolien);
+                                pm.open();
+                                pm.addProfil(newProfil);
+                                pm.close();
+                                Toast.makeText(creation_compte.this, "Compte ajouté à la BDD ;)",
+                                        Toast.LENGTH_LONG).show();
+                            }else {
+                                Toast.makeText(creation_compte.this, "Les 2 Passwords sont différents :(",
+                                        Toast.LENGTH_LONG).show();
+                            }
+                        }else{
+                            Toast.makeText(creation_compte.this, "Attention aux 4 contraintes",
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    }
+
                 }
+
+
+
+
             }
+
         });
     }
 

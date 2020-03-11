@@ -67,8 +67,8 @@ public class connection_user extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connection_user);
         button_user=findViewById(R.id.button_user);
-        edit_user=(EditText)findViewById(R.id.user_user);
-        edit_mdp=(EditText)findViewById(R.id.password_user);
+        edit_user=(EditText)findViewById(R.id.user);
+        edit_mdp=(EditText)findViewById(R.id.password);
 
 
         tv_1=findViewById(R.id.tv_1);
