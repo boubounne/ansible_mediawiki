@@ -67,8 +67,8 @@ public class connection_osol extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connection_osol);
         buttonosol=findViewById(R.id.button_osol);
-        edit_user=(EditText)findViewById(R.id.user);
-        edit_mdp=(EditText)findViewById(R.id.password);
+        edit_user=findViewById(R.id.user);
+        edit_mdp=findViewById(R.id.password);
         mot_de_passe=edit_mdp.getText().toString();
         tv_1=findViewById(R.id.tv_1);
         tv_2=findViewById(R.id.tv_2);

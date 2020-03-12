@@ -53,6 +53,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button button4=findViewById(R.id.bt4);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Recherche.class);
+                intent.putExtra(IS_SHOWN,isShown);
+                startActivity(intent);
+            }
+        });
+
         ProfilManager pm = new ProfilManager(this);
         pm.open();
         pm.addProfil(new profil("alexandre", "alex", "azerty", "alex@devinci", true));

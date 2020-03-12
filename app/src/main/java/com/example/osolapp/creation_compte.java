@@ -174,7 +174,7 @@ public class creation_compte extends AppCompatActivity {
 
 
 
-    /*public void recupProfil(){
+    /*public void recupName(){
         if (controle.getName() != null){
             this.Name.setText(controle.getName().toString());
             this.User.setText(controle.getUser().toString());

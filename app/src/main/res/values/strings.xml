@@ -3,10 +3,12 @@
     <string name="button1">Connection Osol</string>
     <string name="button2">Connection Utilisateur</string>
     <string name="button3">Créer un compte</string>
+    <string name="button4">Recherche ID et Password</string>
     <string name="tag">Bonjour est bienvenue dans le monde merveilleux de Osol</string>
     <string name="title">OSOL \n PICO</string>
     <string name="User">Nom d Utilisateur</string>
     <string name="password">Mot de Passe</string>
+    <string name="search">Recherche</string>
     <string name="button_val">Validation</string>
     <string name="Question">Etes vous Osolien ?</string>
     <string-array name="Choice">
@@ -22,4 +24,20 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_recherche">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>
