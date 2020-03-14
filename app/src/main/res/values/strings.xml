@@ -8,7 +8,10 @@
     <string name="title">OSOL \n PICO</string>
     <string name="User">Nom d Utilisateur</string>
     <string name="password">Mot de Passe</string>
-    <string name="search">Recherche</string>
+    <string name="searchN">Recherche par nom</string>
+    <string name="searchU">Recherche User</string>
+    <string name="searchE">Recherche Email</string>
+    <string name="search">Mot a chercher</string>
     <string name="button_val">Validation</string>
     <string name="Question">Etes vous Osolien ?</string>
     <string-array name="Choice">

@@ -86,11 +86,11 @@ public class ProfilManager {
     }
 
 
-  /*  public profil getRecherche(String user){
+  public profil getRechercheName(String user){
         //select * from profil where name like '%vincent%' or user like '%vincent%' or mail like '%vincent%
 
-        Cursor c = db.rawQuery("SELECT * FROM "+TABLE_NAME + " WHERE " + KEY_ID_PROFIL + "as like ?", new String[]{user},
-                ,KEY_NAME_PROFIL+"as like ?", new String[]{user}, KEY_MAIL_PROFIL+"as like ?", new String[]{user});
+        Cursor c = db.rawQuery("SELECT * FROM "+TABLE_NAME + " WHERE " + KEY_NAME_PROFIL + "like", new String[]{"%"+user+"%"});
+        //Cursor c1 = db.rawQuery("SELECT * FROM "+TABLE_NAME + " WHERE " + KEY_NAME_PROFIL + "as like ?", new String[]{"%"+user+"%"});
         if (c.moveToFirst()){
             Log.i("found", "ffff");
             String User = c.getString(c.getColumnIndex(KEY_ID_PROFIL));
@@ -107,7 +107,7 @@ public class ProfilManager {
             return p;
         }
         return new profil("", "","","",false);
-    }*/
+    }
 
     public String getPassword(String user){
         Cursor c = db.rawQuery("SELECT password FROM "+TABLE_NAME + " WHERE " + KEY_ID_PROFIL + "= ?", new String[]{user});
