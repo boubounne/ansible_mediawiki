@@ -101,8 +101,6 @@ public class connection_user extends AppCompatActivity {
                 pm.open();
                 profil p=pm.getProfil(utilisateur);
                 pm.close();
-                Toast.makeText(connection_user.this, p.getPassword(),
-                        Toast.LENGTH_LONG).show();
                 mot_de_passe=edit_mdp.getText().toString();
                 if(mot_de_passe.equals("") || utilisateur.equals("")) {
                     Toast.makeText(connection_user.this, "nom d'utilisateur et/ou mot de passe absent",

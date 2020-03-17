@@ -26,6 +26,7 @@ public class DataView extends AppCompatActivity {
         buttonUser=findViewById(R.id.btUser);
         Name=findViewById(R.id.name);
 
+
         buttonName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +46,7 @@ public class DataView extends AppCompatActivity {
             public void onClick(View v) {
                 String Nom=Name.getText().toString();
                 pm.open();
-                profil p=pm.getRechercheName(Nom);
+                profil p=pm.getRechercheUser(Nom);
                 pm.close();
                 Toast.makeText(DataView.this, "nom : "+p.getName()+" user : "+p.getUser()+" email : "+p.getEmail(),
                         Toast.LENGTH_LONG).show();
@@ -58,7 +59,7 @@ public class DataView extends AppCompatActivity {
             public void onClick(View v) {
                 String Nom=Name.getText().toString();
                 pm.open();
-                profil p=pm.getRechercheName(Nom);
+                profil p=pm.getRechercheEmail(Nom);
                 pm.close();
                 Toast.makeText(DataView.this, "nom : "+p.getName()+" user : "+p.getUser()+" email : "+p.getEmail(),
                         Toast.LENGTH_LONG).show();

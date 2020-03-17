@@ -89,8 +89,7 @@ public class ProfilManager {
   public profil getRechercheName(String user){
         //select * from profil where name like '%vincent%' or user like '%vincent%' or mail like '%vincent%
 
-        Cursor c = db.rawQuery("SELECT * FROM "+TABLE_NAME + " WHERE " + KEY_NAME_PROFIL + "like", new String[]{"%"+user+"%"});
-        //Cursor c1 = db.rawQuery("SELECT * FROM "+TABLE_NAME + " WHERE " + KEY_NAME_PROFIL + "as like ?", new String[]{"%"+user+"%"});
+        Cursor c = db.rawQuery("SELECT * FROM "+TABLE_NAME + " WHERE " + KEY_NAME_PROFIL + " = ?", new String[]{user});
         if (c.moveToFirst()){
             Log.i("found", "ffff");
             String User = c.getString(c.getColumnIndex(KEY_ID_PROFIL));
@@ -109,15 +108,50 @@ public class ProfilManager {
         return new profil("", "","","",false);
     }
 
-    public String getPassword(String user){
-        Cursor c = db.rawQuery("SELECT password FROM "+TABLE_NAME + " WHERE " + KEY_ID_PROFIL + "= ?", new String[]{user});
-        String pass="";
+    public profil getRechercheEmail(String user){
+        //select * from profil where name like '%vincent%' or user like '%vincent%' or mail like '%vincent%
+
+        Cursor c = db.rawQuery("SELECT * FROM "+TABLE_NAME + " WHERE " + KEY_MAIL_PROFIL + " = ?", new String[]{user});
         if (c.moveToFirst()){
-            pass=(c.getString(c.getColumnIndex(KEY_PASSWORD_PROFIL)));
+            Log.i("found", "ffff");
+            String User = c.getString(c.getColumnIndex(KEY_ID_PROFIL));
+            String Name = c.getString(c.getColumnIndex(KEY_NAME_PROFIL));
+            String Mail = c.getString(c.getColumnIndex(KEY_MAIL_PROFIL));
+            String Password = c.getString(c.getColumnIndex(KEY_PASSWORD_PROFIL));
+            Boolean Osolien = false;
+            Boolean.parseBoolean(c.getString(c.getColumnIndex(KEY_OSOLIEN)));
+            if (c.getString(c.getColumnIndex(KEY_OSOLIEN)).equals("1")){
+                Osolien = true;
+            }
             c.close();
+            profil p = new profil(Name, User, Password, Mail, Osolien);
+            return p;
         }
-        return pass;
+        return new profil("", "","","",false);
     }
+
+    public profil getRechercheUser(String user){
+        //select * from profil where name like '%vincent%' or user like '%vincent%' or mail like '%vincent%
+
+        Cursor c = db.rawQuery("SELECT * FROM "+TABLE_NAME + " WHERE " + KEY_ID_PROFIL + " = ?", new String[]{user});
+        if (c.moveToFirst()){
+            Log.i("found", "ffff");
+            String User = c.getString(c.getColumnIndex(KEY_ID_PROFIL));
+            String Name = c.getString(c.getColumnIndex(KEY_NAME_PROFIL));
+            String Mail = c.getString(c.getColumnIndex(KEY_MAIL_PROFIL));
+            String Password = c.getString(c.getColumnIndex(KEY_PASSWORD_PROFIL));
+            Boolean Osolien = false;
+            Boolean.parseBoolean(c.getString(c.getColumnIndex(KEY_OSOLIEN)));
+            if (c.getString(c.getColumnIndex(KEY_OSOLIEN)).equals("1")){
+                Osolien = true;
+            }
+            c.close();
+            profil p = new profil(Name, User, Password, Mail, Osolien);
+            return p;
+        }
+        return new profil("", "","","",false);
+    }
+
 
     public String getName(String user){
         Cursor c = db.rawQuery("SELECT password FROM "+TABLE_NAME + " WHERE " + KEY_ID_PROFIL + "= ?", new String[]{user});
