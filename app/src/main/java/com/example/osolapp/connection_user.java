@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,9 @@ public class connection_user extends AppCompatActivity {
     EditText edit_mdp;
     String mot_de_passe;
     String utilisateur;
+    ImageButton btt1;
+    ImageButton btt2;
+    ImageButton btt3;
     TextView tv_1, tv_2, tv_3,tv_4;
     ProfilManager pm = new ProfilManager(this);
 
@@ -123,6 +127,41 @@ public class connection_user extends AppCompatActivity {
                     }
 
                 }
+            }
+        });
+
+        btt1=findViewById(R.id.imageBt1);
+        btt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(connection_user.this, "Retour au menu principal",
+                        Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(connection_user.this,MainActivity.class );
+                intent.putExtra(IS_SHOWN, isShown);
+                startActivity(intent);
+            }
+        });
+
+
+        btt2=findViewById(R.id.imageButton5);
+        btt2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(connection_user.this,connect.class );
+                intent.putExtra(IS_SHOWN, isShown);
+                startActivity(intent);
+            }
+        });
+
+        btt3=findViewById(R.id.imageBt3);
+        btt3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(connection_user.this, "Description de OSol et Pico",
+                        Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(connection_user.this,description.class);
+                intent.putExtra(IS_SHOWN,isShown);
+                startActivity(intent);
             }
         });
 

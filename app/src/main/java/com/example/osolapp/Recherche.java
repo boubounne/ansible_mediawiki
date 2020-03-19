@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 
@@ -25,6 +26,7 @@ public class Recherche extends AppCompatActivity {
     String utili;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,10 @@ public class Recherche extends AppCompatActivity {
         button=findViewById(R.id.bt);
         user=findViewById(R.id.user5);
         mdp=findViewById(R.id.password5);
+        ImageButton btt1;
+        ImageButton btt2;
+        ImageButton btt3;
+
 
 
 
@@ -67,6 +73,43 @@ public class Recherche extends AppCompatActivity {
                 }
             }
         });
+
+        btt1=findViewById(R.id.imageBt1);
+        btt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Recherche.this, "Retour au menu principal",
+                        Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Recherche.this,MainActivity.class );
+                intent.putExtra(IS_SHOWN, isShown);
+                startActivity(intent);
+            }
+        });
+
+
+        btt2=findViewById(R.id.imageButton5);
+        btt2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Recherche.this,connect.class );
+                intent.putExtra(IS_SHOWN, isShown);
+                startActivity(intent);
+            }
+        });
+
+        btt3=findViewById(R.id.imageBt3);
+        btt3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Recherche.this, "Description de OSol et Pico",
+                        Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Recherche.this,description.class);
+                intent.putExtra(IS_SHOWN,isShown);
+                startActivity(intent);
+            }
+        });
+
+
 
 
 

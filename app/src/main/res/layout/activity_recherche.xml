@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".FragmentSecure">
 
 
@@ -46,5 +47,70 @@
         android:layout_marginTop="237dp"
         android:text="@string/button_val" />
 
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="265dp"
+        android:layout_height="179dp"
+        android:layout_below="@id/bt"
+        android:layout_alignLeft="@id/bt"
+        android:layout_alignRight="@id/bt"
+        android:layout_marginRight="-7dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="360dp"
+        android:layout_height="62dp"
+        android:background="@drawable/side_nav_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_below="@+id/txt"
+        tools:ignore="MissingConstraints">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imageBt3"
+                android:layout_width="100dp"
+                android:layout_height="64dp"
+                android:scaleType="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_menu_gallery" />
+
+            <ImageButton
+                android:id="@+id/imageBt1"
+                android:layout_width="75dp"
+                android:layout_height="64dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_menu_manage" />
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="100dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="42dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageBt3"
+                app:layout_constraintStart_toEndOf="@+id/imageBt1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_myplaces" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
 
 </RelativeLayout>
+

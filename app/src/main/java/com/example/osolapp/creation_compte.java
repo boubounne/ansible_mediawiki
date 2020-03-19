@@ -1,5 +1,6 @@
 package com.example.osolapp;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -35,6 +36,8 @@ public class creation_compte extends AppCompatActivity {
     TextView tv_1, tv_2, tv_3,tv_4;
     ProfilManager pm = new ProfilManager(this);
     int compteur;
+    public static final String IS_SHOWN = "IS_SHOWN";
+    private boolean isShown = true;
 
 
     public boolean validetaMail(String mail){
@@ -151,6 +154,9 @@ public class creation_compte extends AppCompatActivity {
                                 pm.close();
                                 Toast.makeText(creation_compte.this, "Compte ajouté à la BDD ;)",
                                         Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(creation_compte.this,MainActivity.class );
+                                intent.putExtra(IS_SHOWN, isShown);
+                                startActivity(intent);
                             }else {
                                 Toast.makeText(creation_compte.this, "Les 2 Passwords sont différents :(",
                                         Toast.LENGTH_LONG).show();

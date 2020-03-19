@@ -8,55 +8,139 @@
 
 
     <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="451dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="scnsvidvzdvdvddvdvd"/>
+                android:id="@+id/textView3"
+                android:layout_width="50dp"
+                android:layout_height="56dp"
+                android:layout_marginEnd="163dp"
+                android:layout_marginBottom="15dp"
+                android:text="Blabla"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="33dp" />
 
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:text="Boutton2"
-                android:layout_marginTop="40dp"/>
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="260dp"
+                android:layout_marginBottom="20dp"
+                android:text="Kino"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_conversion_absoluteHeight="150dp"
+                tools:layout_conversion_absoluteWidth="360dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="test 2"/>
+                android:layout_marginEnd="20dp"
+                android:text="blabla22"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="33dp" />
 
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:text="Boutton3"
-                android:layout_marginTop="40dp"/>
-
-            <TextView
+                android:id="@+id/buttonpico"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="test3"/>
+                android:layout_marginEnd="260dp"
+                android:layout_marginBottom="20dp"
+                android:text="Pico"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="100dp"
+                android:layout_marginBottom="100dp"
+                android:text="Bonjour et Bienvenue"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_conversion_absoluteHeight="19dp"
+                tools:layout_conversion_absoluteWidth="36dp" />
 
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:text="Boutton4"
-                android:layout_marginTop="40dp"/>
-
-            <TextView
+                android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="test4"/>
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Logo"
+                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_conversion_absoluteHeight="150dp"
+                tools:layout_conversion_absoluteWidth="360dp" />
+
+
         </LinearLayout>
 
-
     </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="360dp"
+        android:layout_height="62dp"
+        android:background="@drawable/side_nav_bar"
+        android:layout_below="@id/scroll"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imageBt3"
+                android:layout_width="100dp"
+                android:layout_height="64dp"
+                android:scaleType="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_menu_gallery" />
+
+            <ImageButton
+                android:id="@+id/imageBt1"
+                android:layout_width="75dp"
+                android:layout_height="64dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_menu_manage" />
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="100dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="42dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageBt3"
+                app:layout_constraintStart_toEndOf="@+id/imageBt1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_myplaces" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </RelativeLayout>
