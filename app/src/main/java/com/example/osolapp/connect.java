@@ -6,69 +6,61 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.TextView;
-import android.widget.Toast;
 
-
-public class MainActivity extends AppCompatActivity {
-
+public class connect extends AppCompatActivity {
 
     private static final int NEXT_REQUEST_CODE=0;
     public static final String IS_SHOWN = "IS_SHOWN";
     private boolean isShown = true;
-    ImageButton button1;
-    ImageButton button2;
-    ImageButton button3;
+    Button button1;
     SQLiteDataBaseHelper db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        button1=findViewById(R.id.imageBt1);
+        setContentView(R.layout.activity_connect);
+        button1=findViewById(R.id.bt1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Retour au menu principal",
-                        Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(MainActivity.this,MainActivity.class );
+                Intent intent = new Intent(connect.this,connection_osol.class );
                 intent.putExtra(IS_SHOWN, isShown);
                 startActivity(intent);
             }
         });
 
 
-        button2=findViewById(R.id.imageButton5);
+        Button button2=findViewById(R.id.bt2);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,connect.class );
+                Intent intent = new Intent(connect.this,connection_user.class );
                 intent.putExtra(IS_SHOWN, isShown);
                 startActivity(intent);
             }
         });
 
-        button3=findViewById(R.id.imageBt3);
+        Button button3=findViewById(R.id.bt3);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Description de OSol et Pico",
-                        Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(MainActivity.this,description.class);
+                Intent intent = new Intent(connect.this,creation_compte.class);
                 intent.putExtra(IS_SHOWN,isShown);
                 startActivity(intent);
             }
         });
 
+        Button button4=findViewById(R.id.bt4);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(connect.this,Recherche.class);
+                intent.putExtra(IS_SHOWN,isShown);
+                startActivity(intent);
+            }
+        });
 
-        ProfilManager pm = new ProfilManager(this);
-        pm.open();
-        pm.addProfil(new profil("alexandre", "alex", "azerty", "alex@devinci", true));
-        pm.addProfil(new profil("corentin", "cjpm", "aaa", "cjpm@devinci", false));
     }
-
-
-
 
 }
