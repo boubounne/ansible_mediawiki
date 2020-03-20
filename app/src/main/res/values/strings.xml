@@ -15,12 +15,20 @@
     Elle se situe dans le sud de la France, à Nice dans la région PACA</string>
     <string name="descriptionK">    Bienvenue dans l"'"histoire de la start-up OSol.
     Voici sur cette page quelque info sur KINO</string>
+    <string name="descriptionP">    Bienvenue dans l"'"histoire de la start-up OSol.
+    Voici sur cette page quelque info sur PICO </string>
     <string name="blablaKino">      Kino est la première création de l"'"entreprise OSol.
     Kino ressemble à une Fleur. Vous pouvez avoir plus de détail en cliquant sur le boutton
     ci-dessous : </string>
+    <string name="blablaPico1">     Kino est la seconde création de l"'"entreprise OSol.
+    Pico a été présenté au CES de Las Vegas 2020 et va être présent au Salon de Vivatech 2020.
+    Pico est en forme de boitier, c"'"est une batterie mobile. Elle est plus facilement
+    transportable que Kino</string>
     <string name="blablaKino1">     Kino est la première création de l"'"entreprise OSol.
     Kino a été présenté au CES de Las Vegas et aussi au Salon de Vivatech.
     Les pétales de la fleur sont en photovoltaiques ce qui permet d"'"avoir une énergie illimitée.</string>
+    <string name="blablaPico2">     Sur cette seconde image nous voyons l"'"intérieur de la  batterie.
+    Dans cette batterie, il y a 6 piles pour avoir une batterie transportable</string>
     <string name="blablaPico">      Pico est la deuxième création de l"'"entreprise OSol.
     Pico est une batterie transportable. Vous pouvez avoir plus de détail en cliquant sur le boutton
     ci-dessous : </string>

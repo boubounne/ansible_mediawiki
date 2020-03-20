@@ -14,6 +14,7 @@ public class pico extends AppCompatActivity {
     ImageButton btt1;
     ImageButton btt2;
     ImageButton btt3;
+    ImageButton btt4;
     public static final String IS_SHOWN = "IS_SHOWN";
     private boolean isShown = true;
 
@@ -53,6 +54,19 @@ public class pico extends AppCompatActivity {
                         Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(pico.this,description.class);
                 intent.putExtra(IS_SHOWN,isShown);
+                startActivity(intent);
+            }
+        });
+
+
+        btt4=findViewById(R.id.imBtBack);
+        btt4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(pico.this, "Retour a l'histoire ",
+                        Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(pico.this,description.class );
+                intent.putExtra(IS_SHOWN, isShown);
                 startActivity(intent);
             }
         });
