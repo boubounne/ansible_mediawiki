@@ -12,3 +12,5 @@ public class info_pico_osol extends AppCompatActivity {
         setContentView(R.layout.activity_info_pico_osol);
     }
 }
+
+

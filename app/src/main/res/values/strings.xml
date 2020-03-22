@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">OsolApp</string>
-    <string name="button1">Connection Osol</string>
-    <string name="button2">Connection Utilisateur</string>
+    <string name="button1">Connexion Osol</string>
+    <string name="button2">Connexion Utilisateur</string>
     <string name="button3">Créer un compte</string>
     <string name="button4">Recherche ID et Password</string>
     <string name="tag">Bonjour est bienvenue dans le monde merveilleux de Osol</string>
@@ -43,9 +43,9 @@
         <item>Non</item>
         <item>Oui</item>
     </string-array>
-    <string name="Version">Version 1.0</string>
-    <string name="Temp">Température</string>
-    <string name="Bat">Info Batterie</string>
+    <string name="Version">Version 2.0</string>
+    <string name="Temp">Température : </string>
+    <string name="Bat">Info Batterie : </string>
     <string name="title_activity_creation_compte">creation_compte</string>
     <string name="question">êtes-vous O\'Solien ?</string>
     <string name="Title">Connection User</string>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,28 +13,44 @@
 
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="99dp"
-        android:textSize="18sp"
-        android:hint="@string/Temp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="99dp"
-        android:textSize="18sp"
-        android:hint="@string/Bat" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="418dp"
-        android:hint=""
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:hint="@string/Temp"
+        android:layout_marginStart="20dp"
         android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textTemp"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:layout_marginStart="45dp"
+        android:text="23,5 °C" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:hint="@string/Bat"
+        android:layout_marginStart="20dp"
+        android:textSize="18sp" />
+
+
+    <TextView
+        android:id="@+id/textBat"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginStart="45dp"
+        android:hint="Fonctionne Normalement"
+        android:textColor="#673AB7"
+        android:textSize="18sp" />
+
+
 
     <TextView
         android:id="@+id/Version"
         android:layout_width="62dp"
         android:layout_height="14dp"
         android:text="@string/Version"
+        android:layout_marginStart="275dp"
         android:textSize="12sp" />
 
 

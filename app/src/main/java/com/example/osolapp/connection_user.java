@@ -112,7 +112,7 @@ public class connection_user extends AppCompatActivity {
                 }else {
                     if (!p.getOsolien()){
                         if (p.getPassword().equals(mot_de_passe)) {
-                            Intent intent = new Intent(connection_user.this, info_pico_osol.class);
+                            Intent intent = new Intent(connection_user.this, info_pico_user.class);
                             intent.putExtra(IS_SHOWN, isShown);
                             startActivity(intent);
                         } else {
