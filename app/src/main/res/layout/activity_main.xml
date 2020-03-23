@@ -6,10 +6,10 @@
     tools:context=".MainActivity">
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
         android:layout_width="359dp"
-        android:layout_height="157dp"
+        android:layout_height="180dp"
         android:background="@drawable/side_nav_bar"
         android:gravity="bottom"
         android:orientation="vertical"
@@ -25,44 +25,63 @@
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:contentDescription="nav_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@mipmap/ic_launcher_round" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="O'Sol"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/Entreprise"
+            android:textSize="15sp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="pico@osol.com" />
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="6dp"
+            android:text="@string/mail"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <TextView
             android:id="@+id/Version"
-            android:layout_width="62dp"
-            android:layout_height="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="30dp"
             android:text="@string/Version"
-            android:textSize="12sp" />
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="301dp"
         android:layout_height="167dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="76dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.322"
+        app:layout_constraintVertical_bias="0.137"
         app:srcCompat="@drawable/osol"
         tools:srcCompat="@drawable/osol" />
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="360dp"

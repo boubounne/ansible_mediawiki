@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class DataView extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class DataView extends AppCompatActivity {
     Button buttonUser;
     Button buttonEmail;
     EditText Name;
+    TextView affiche;
     ProfilManager pm = new ProfilManager(this);
     ImageButton btt1;
     ImageButton btt2;
@@ -33,6 +35,7 @@ public class DataView extends AppCompatActivity {
         buttonEmail=findViewById(R.id.btEmail);
         buttonUser=findViewById(R.id.btUser);
         Name=findViewById(R.id.name);
+        affiche=findViewById(R.id.textAffiche);
 
 
         buttonName.setOnClickListener(new View.OnClickListener() {
@@ -42,8 +45,7 @@ public class DataView extends AppCompatActivity {
                 pm.open();
                 profil p=pm.getRechercheName(Nom);
                 pm.close();
-                Toast.makeText(DataView.this, "nom : "+p.getName()+" user : "+p.getUser()+" email : "+p.getEmail(),
-                        Toast.LENGTH_LONG).show();
+                affiche.setText(" Nom : "+p.getName()+"\n"+" User : "+p.getUser()+"\n"+" Email : "+p.getEmail());
 
             }
         });
@@ -56,8 +58,7 @@ public class DataView extends AppCompatActivity {
                 pm.open();
                 profil p=pm.getRechercheUser(Nom);
                 pm.close();
-                Toast.makeText(DataView.this, "nom : "+p.getName()+" user : "+p.getUser()+" email : "+p.getEmail(),
-                        Toast.LENGTH_LONG).show();
+                affiche.setText(" Nom : "+p.getName()+"\n"+" User : "+p.getUser()+"\n"+" Email : "+p.getEmail());
 
             }
         });
@@ -69,8 +70,7 @@ public class DataView extends AppCompatActivity {
                 pm.open();
                 profil p=pm.getRechercheEmail(Nom);
                 pm.close();
-                Toast.makeText(DataView.this, "nom : "+p.getName()+" user : "+p.getUser()+" email : "+p.getEmail(),
-                        Toast.LENGTH_LONG).show();
+                affiche.setText(" Nom : "+p.getName()+"\n"+" User : "+p.getUser()+"\n"+" Email : "+p.getEmail());
 
             }
         });

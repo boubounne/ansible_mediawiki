@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">OsolApp</string>
     <string name="button1">Connexion Osol</string>
+    <string name="Entreprise">O"'"Sol</string>
+    <string name="mail">pico@osol.com</string>
     <string name="button2">Connexion Utilisateur</string>
     <string name="button3">Créer un compte</string>
     <string name="button4">Recherche ID et Password</string>

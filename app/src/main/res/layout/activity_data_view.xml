@@ -59,6 +59,16 @@
         app:layout_constraintVertical_bias="0.112" />
 
 
+    <TextView
+        android:id="@+id/textAffiche"
+        android:layout_width="407dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="216dp"
+        android:text=""
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="360dp"
