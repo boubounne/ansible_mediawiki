@@ -30,7 +30,7 @@ public class profilAdapter extends ArrayAdapter<profil> {
             convertView = layoutInflater.inflate(R.layout.view_profil, parent, false);
             holder = new ViewHolder();
             holder.firstName = convertView.findViewById(R.id.usser);
-            holder.lastName = convertView.findViewById(R.id.passsword);
+            holder.lastName = convertView.findViewById(R.id.namme);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
