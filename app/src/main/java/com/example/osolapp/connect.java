@@ -60,7 +60,7 @@ public class connect extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(connect.this,Recherche.class);
+                Intent intent = new Intent(connect.this,personne.class);
                 intent.putExtra(IS_SHOWN,isShown);
                 startActivity(intent);
             }

@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -11,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 class ProfilRecyclerAdapter extends RecyclerView.Adapter<profilViewHolder> {
 
-    private final List<profil> profilList;
+    private final ArrayList<profil> profilList;
 
-    ProfilRecyclerAdapter(@NonNull List<profil> studentList) {
+    ProfilRecyclerAdapter(@NonNull ArrayList<profil> studentList) {
         this.profilList = studentList;
     }
 
