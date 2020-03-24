@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -17,7 +18,7 @@ public class profilAdapter extends ArrayAdapter<profil> {
 
     private final LayoutInflater layoutInflater;
 
-    public profilAdapter(@NonNull Context context, List<profil> profil) {
+    public profilAdapter(@NonNull Context context, ArrayList<profil> profil) {
         super(context, 0, profil);
         this.layoutInflater = LayoutInflater.from(context);
     }
