@@ -16,11 +16,19 @@ public class profilViewHolder extends RecyclerView.ViewHolder{
     public profilViewHolder(@NonNull View itemView) {
         super(itemView);
         User = itemView.findViewById(R.id.usser);
+        String usser=User.getText().toString();
         Name = itemView.findViewById(R.id.namme);
+        String namme=Name.getText().toString();
         Email = itemView.findViewById(R.id.emmail);
+        String emmail=Email.getText().toString();
+
+
     }
 
     public void bind(profil profil) {
+
+        //User=itemView.findViewById(R.id.usser);
+        //String usser =User.getText().toString();
         User.setText(profil.getUser());
         Name.setText(profil.getName());
         Email.setText(profil.getEmail());
