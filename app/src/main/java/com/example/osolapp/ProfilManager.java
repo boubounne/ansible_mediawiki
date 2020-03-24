@@ -107,7 +107,7 @@ public class ProfilManager {
     }
 
 
-  public profil getRechercheName(String user){
+    public profil getRechercheName(String user){
         //select * from profil where name like '%vincent%' or user like '%vincent%' or mail like '%vincent%
 
         Cursor c = db.rawQuery("SELECT * FROM "+TABLE_NAME + " WHERE " + KEY_NAME_PROFIL + " = ?", new String[]{user});
