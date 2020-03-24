@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class ProfilManager {
     private static final String TABLE_NAME = "profil";
     public static final String KEY_ID_PROFIL = "user";
@@ -85,8 +87,27 @@ public class ProfilManager {
         return new profil("", "","","",false);
     }
 
+    public ArrayList<profil> getAll(){
+        Cursor c = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        ArrayList<profil> list = new ArrayList<>();
+        while (c.moveToNext()){
+            String User = c.getString(c.getColumnIndex(KEY_ID_PROFIL));
+            String Name = c.getString(c.getColumnIndex(KEY_NAME_PROFIL));
+            String Mail = c.getString(c.getColumnIndex(KEY_MAIL_PROFIL));
+            String Password = c.getString(c.getColumnIndex(KEY_PASSWORD_PROFIL));
+            Boolean Osolien = false;
+            Boolean.parseBoolean(c.getString(c.getColumnIndex(KEY_OSOLIEN)));
+            if (c.getString(c.getColumnIndex(KEY_OSOLIEN)).equals("1")){
+                Osolien = true;
+            }
+            profil p = new profil(Name, User, Password, Mail, Osolien);
+            list.add(p);
+        }
+        return list;
+    }
 
-  public profil getRechercheName(String user){
+
+    public profil getRechercheName(String user){
         //select * from profil where name like '%vincent%' or user like '%vincent%' or mail like '%vincent%
 
         Cursor c = db.rawQuery("SELECT * FROM "+TABLE_NAME + " WHERE " + KEY_NAME_PROFIL + " = ?", new String[]{user});
