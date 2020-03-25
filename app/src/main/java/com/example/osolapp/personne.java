@@ -20,15 +20,26 @@ public class personne extends AppCompatActivity {
         // ArrayList for person names
         ArrayList<String> personNames = new ArrayList<>(Arrays.asList("Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6"));
         ArrayList<Integer> personImages = new ArrayList<>(Arrays.asList(R.drawable.person1, R.drawable.person2, R.drawable.person3, R.drawable.person4, R.drawable.person5, R.drawable.person6));
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personne);
-        // get the reference of RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
+        /*
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(),3, LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(gridLayoutManager); // set LayoutManager to RecyclerView
-        CustomAdapter customAdapter = new CustomAdapter(personne.this, personNames,personImages);
-        recyclerView.setAdapter(customAdapter);
+        CustomAdapter adapter = new CustomAdapter(personNames,personImages);
+
+        */
+
+        ProfilManager pm = new ProfilManager(this);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        ArrayList<profil> maliste = new ArrayList<>();
+        pm.open();
+        maliste=pm.getAll();
+        pm.close();
+        ProfilRecyclerAdapter adapter=new ProfilRecyclerAdapter(maliste);
+
+
+        recyclerView.setAdapter(adapter);
     }
 }

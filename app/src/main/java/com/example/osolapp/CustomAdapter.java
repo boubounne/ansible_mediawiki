@@ -19,8 +19,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     ArrayList<Integer> personImages;
     Context context;
 
-    public CustomAdapter(Context context, ArrayList<String> personNames, ArrayList<Integer> personImages) {
-        this.context = context;
+    public CustomAdapter(ArrayList<String> personNames, ArrayList<Integer> personImages) {
         this.personNames = personNames;
         this.personImages = personImages;
     }
@@ -39,7 +38,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         // set the data in items
         holder.name.setText(personNames.get(position));
         holder.image.setImageResource(personImages.get(position));
-        // implement setOnClickListener event on item view.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +56,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        // init the item view's
         TextView name;
         ImageView image;
 
