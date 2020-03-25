@@ -14,9 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 class ProfilRecyclerAdapter extends RecyclerView.Adapter<profilViewHolder> {
 
     private final ArrayList<profil> profilList;
-    ArrayList<String> personNames;
-    ArrayList<Integer> personImages;
-    Context context;
+
 
 
 
@@ -24,10 +22,7 @@ class ProfilRecyclerAdapter extends RecyclerView.Adapter<profilViewHolder> {
         this.profilList = studentList;
     }
 
-    public void testImage(@NonNull ArrayList<Integer> image, ArrayList<String> name) {
-        this.personImages = image;
-        this.personNames=name;
-    }
+
 
     @NonNull
     @Override

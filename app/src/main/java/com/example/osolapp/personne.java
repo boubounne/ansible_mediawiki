@@ -30,10 +30,9 @@ public class personne extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         // ArrayList for person names
+        super.onCreate(savedInstanceState);
         ArrayList<String> personNames = new ArrayList<>(Arrays.asList("Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6"));
         ArrayList<Integer> personImages = new ArrayList<>(Arrays.asList(R.drawable.person1, R.drawable.person2, R.drawable.person3, R.drawable.person4, R.drawable.person5, R.drawable.person6));
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personne);
 
         //setContentView(R.layout.activity_personne);
 
@@ -66,7 +65,7 @@ public class personne extends AppCompatActivity {
         v = inflater.inflate(R.layout.activity_personne, container, false);
         myrecyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
         CustomAdapter recyclerViewAdapter = new CustomAdapter(personNames,personImages);
-        myrecyclerView.setLayoutManager(new GridLayoutManager(Context,2));
+        myrecyclerView.setLayoutManager(new GridLayoutManager(Context,3));
         myrecyclerView.setAdapter(recyclerViewAdapter);
         return v;
     }

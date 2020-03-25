@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -28,7 +30,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // infalte the item Layout
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.rowlayout, parent, false);
+        LayoutInflater inflater = LayoutInflater.from(context);
+        //View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.rowlayout, parent, false);
+        View v=inflater.inflate(R.layout.rowlayout, parent, false);
         // set the view's size, margins, paddings and layout parameters
         MyViewHolder vh = new MyViewHolder(v); // pass the view to View Holder
         vh.itemView.setOnClickListener(new View.OnClickListener() {
@@ -62,12 +66,17 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
 
     public int getItemCount() {
+
         return personNames.size();
     }
+
+
+
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name;
         ImageView image;
+        private CardView item;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -75,6 +84,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             // get the reference of item view's
             name = (TextView) itemView.findViewById(R.id.name);
             image = (ImageView) itemView.findViewById(R.id.image);
+            item = (CardView) itemView.findViewById(R.id.cardview_id);
 
         }
     }
