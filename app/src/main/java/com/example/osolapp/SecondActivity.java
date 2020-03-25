@@ -2,10 +2,10 @@ package com.example.osolapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.customview.view.AbsSavedState;
+
 
 import android.widget.ImageView;
-
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondActivity extends AppCompatActivity {
