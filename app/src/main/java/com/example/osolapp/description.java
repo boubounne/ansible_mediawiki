@@ -14,7 +14,7 @@ public class description extends AppCompatActivity {
     ImageButton btt1;
     ImageButton btt2;
     ImageButton btt3;
-    Button boutton1;
+    Button boutton1, boutton3;
     Button boutton2;
     public static final String IS_SHOWN = "IS_SHOWN";
     private boolean isShown = true;
@@ -80,6 +80,16 @@ public class description extends AppCompatActivity {
                 Toast.makeText(description.this, "Bonne Lecture de Pico",
                         Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(description.this,pico.class );
+                intent.putExtra(IS_SHOWN, isShown);
+                startActivity(intent);
+            }
+        });
+
+        boutton3=findViewById(R.id.buttonSoutiens);
+        boutton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(description.this,personne.class );
                 intent.putExtra(IS_SHOWN, isShown);
                 startActivity(intent);
             }
