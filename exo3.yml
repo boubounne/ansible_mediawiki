@@ -1,0 +1,8 @@
+---
+- name: "install de mediawiki"
+  hosts: 192.168.56.103
+  vars:
+    user: vincent
+  roles :
+    - requis
+    - mediawiki
