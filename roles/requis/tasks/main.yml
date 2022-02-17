@@ -1,0 +1,31 @@
+---
+# tasks file for requis
+- name: "update"
+  apt:
+   update_cache: yes
+
+- name: "Install prè-requis"
+  apt:
+   name: "{{ item }}"
+   state: present
+  with_items:
+    - mariadb-server
+    - php7.3
+    - php-mysql
+    - libapache2-mod-php
+    - apache2
+    - php-xml
+    - php-mbstring
+    - python3-pymysql
+    - php-intl
+
+- name: mysql run ans start
+  service:
+    name: mysql
+    state: started
+    enabled: yes
+  become: yes
+
+- name: launch mysql conf
+  include: mysql.yml
+
