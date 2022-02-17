@@ -1,8 +1,6 @@
 ---
 - name: "install de mediawiki"
   hosts: all
-  vars:
-    user: vincent
   roles :
     - requis
     - mediawiki
