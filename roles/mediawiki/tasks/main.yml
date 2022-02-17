@@ -1,0 +1,23 @@
+---
+# tasks file for mediawiki
+
+
+- name: vérifie existance ou créé dossier mediawiki
+  file:
+    path: /var/lib/mediawiki
+    state: directory
+
+
+
+- name: télécharger et décompresser mediawiki
+  unarchive:
+    src: https://releases.wikimedia.org/mediawiki/1.37/mediawiki-1.37.1.tar.gz
+    dest: /var/lib/mediawiki
+    remote_src: yes
+
+
+- name: lien symbolique wiki
+  file:
+    src: /var/lib/mediawiki
+    dest: /var/www/html/mediawiki
+    state: link
