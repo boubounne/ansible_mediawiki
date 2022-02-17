@@ -8,8 +8,9 @@
     remote_src: yes
 
 
-- name: lien symbolique wiki
+- name: lien symbolique pour le symbole
   file:
     src: /var/lib/mediawiki
     dest: /var/www/html/mediawiki
+    #dest: /var/www/html/mediawiki/mediawiki-1.37
     state: link
